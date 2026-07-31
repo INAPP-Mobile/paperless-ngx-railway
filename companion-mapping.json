@@ -6,7 +6,8 @@
     "PGHOST": "PGHOST",
     "PGPORT": "PGPORT",
     "PGUSER": "PGUSER",
-    "PGPASSWORD": "PGPASSWORD"
+    "PGPASSWORD": "PGPASSWORD",
+    "PGDATABASE": "PGDATABASE"
   },
   "redis": {
     "PRIVATE_DOMAIN": "redis.railway.internal",

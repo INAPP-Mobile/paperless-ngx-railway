@@ -4,31 +4,35 @@
     "description": "Postgres superuser name. Also used by Paperless-ngx to connect (PGUSER)."
   },
   "POSTGRES_PASSWORD": {
-    "value": "paperless",
-    "description": "Postgres password. Also used by Paperless-ngx to connect (PGPASSWORD). Default literal 'paperless' so a fresh template deploy authenticates out of the box. Rotate this in the dashboard before production."
+    "value": "${{secret(16)}}",
+    "description": "Postgres password. Auto-generated. Also used by Paperless-ngx to connect (PGPASSWORD)."
   },
   "POSTGRES_DB": {
     "value": "paperless",
-    "description": "Initial database created on first boot. Must match PAPERLESS_DBNAME on the Paperless service."
+    "description": "Initial database created on first boot. Also used as PGDATABASE for Paperless-ngx."
   },
   "PGDATA": {
     "value": "/var/lib/postgresql/data/pgdata",
     "description": "Postgres data directory. Must be a subdirectory of the volume mount path (/var/lib/postgresql) so lost+found stays outside PGDATA."
   },
   "PGHOST": {
-    "value": "postgres.railway.internal",
-    "description": "Postgres internal hostname. Shared with the Paperless-ngx service via companion-mapping."
+    "value": "${{RAILWAY_PRIVATE_DOMAIN}}",
+    "description": "Postgres internal hostname (Railway private domain). Shared with Paperless-ngx via companion-mapping."
   },
   "PGPORT": {
     "value": "5432",
-    "description": "Postgres port. Shared with the Paperless-ngx service via companion-mapping."
+    "description": "Postgres port. Shared with Paperless-ngx via companion-mapping."
   },
   "PGUSER": {
-    "value": "paperless",
-    "description": "Postgres username for Paperless-ngx. Shared with the Paperless-ngx service via companion-mapping."
+    "value": "${{POSTGRES_USER}}",
+    "description": "Postgres username for Paperless-ngx. Shares the POSTGRES_USER value. Shared with Paperless-ngx via companion-mapping."
   },
   "PGPASSWORD": {
-    "value": "paperless",
-    "description": "Postgres password for Paperless-ngx. Shared with the Paperless-ngx service via companion-mapping. Must match POSTGRES_PASSWORD."
+    "value": "${{POSTGRES_PASSWORD}}",
+    "description": "Postgres password for Paperless-ngx. Shares the POSTGRES_PASSWORD value. Shared with Paperless-ngx via companion-mapping."
+  },
+  "PGDATABASE": {
+    "value": "${{POSTGRES_DB}}",
+    "description": "Postgres database name. Shares the POSTGRES_DB value. Shared with Paperless-ngx via companion-mapping."
   }
 }
