@@ -10,7 +10,6 @@
     "PGDATABASE": "PGDATABASE"
   },
   "redis": {
-    "PRIVATE_DOMAIN": "redis.railway.internal",
     "REDIS_URL": "REDIS_URL"
   }
 }
