@@ -61,7 +61,6 @@ echo "=== Database migrations completed ==="
 
 # --- Start Paperless-ngx ---
 echo "=== Starting Paperless-ngx on port ${PORT:-8000} ==="
-# Paperless-ngx uses s6-overlay for process management
-# The original image's CMD is "paperless" which starts s6-svscan
-# Since we override ENTRYPOINT, we need to start s6 directly
-exec /usr/bin/s6-svscan /etc/s6
+# Call the original Paperless-ngx entrypoint to start s6 and all services
+# The original entrypoint handles s6-svscan startup, migrations, etc.
+exec /usr/local/bin/paperless-original-entrypoint.sh paperless
