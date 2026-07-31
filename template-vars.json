@@ -5,7 +5,7 @@
     "isOptional": true
   },
   "PAPERLESS_REDIS": {
-    "defaultValue": "${{REDIS_URL}}",
+    "defaultValue": "${{Redis.REDIS_URL}}",
     "description": "Redis connection string for Celery broker. Auto-detected from the Redis companion service (REDIS_URL).",
     "isOptional": true
   },
@@ -15,37 +15,37 @@
     "isOptional": true
   },
   "PAPERLESS_DBHOST": {
-    "defaultValue": "${{PGHOST}}",
+    "defaultValue": "${{Postgres.PGHOST}}",
     "description": "PostgreSQL host. Auto-detected from the Postgres companion service (PGHOST).",
     "isOptional": true
   },
   "PAPERLESS_DBPORT": {
-    "defaultValue": "${{PGPORT}}",
+    "defaultValue": "${{Postgres.PGPORT}}",
     "description": "PostgreSQL port. Auto-detected from the Postgres companion service (PGPORT).",
     "isOptional": true
   },
   "PAPERLESS_DBNAME": {
-    "defaultValue": "${{PGDATABASE}}",
+    "defaultValue": "${{Postgres.PGDATABASE}}",
     "description": "PostgreSQL database name. Auto-detected from the Postgres companion service (PGDATABASE).",
     "isOptional": true
   },
   "PAPERLESS_DBUSER": {
-    "defaultValue": "${{PGUSER}}",
+    "defaultValue": "${{Postgres.PGUSER}}",
     "description": "PostgreSQL username. Auto-detected from the Postgres companion service (PGUSER).",
     "isOptional": true
   },
   "PAPERLESS_DBPASS": {
-    "defaultValue": "${{PGPASSWORD}}",
+    "defaultValue": "${{Postgres.PGPASSWORD}}",
     "description": "PostgreSQL password. Auto-detected from the Postgres companion service (PGPASSWORD).",
     "isOptional": true
   },
-  "PAPERLESS_DBSSLMODE": {
-    "defaultValue": "prefer",
-    "description": "SSL mode for PostgreSQL connection.",
+  "PAPERLESS_DB_OPTIONS": {
+    "defaultValue": "{\"sslmode\": \"prefer\"}",
+    "description": "PostgreSQL connection options (JSON). Sets SSL mode to prefer.",
     "isOptional": true
   },
   "PAPERLESS_URL": {
-    "defaultValue": "https://${{RAILWAY_PUBLIC_DOMAIN}}",
+    "defaultValue": "https://${{Railway.Public.Domain}}",
     "description": "Public URL for Paperless-ngx. Auto-configured via Railway public domain.",
     "isOptional": true
   },

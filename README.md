@@ -1,4 +1,4 @@
-[![Deploy to Railway](https://railway.app/button.svg)](https://railway.com/deploy/serene-light)
+[![Deploy to Railway](https://railway.app/button.svg)](https://railway.com/deploy/paperless-ngx)
 
 # Deploy and Host Paperless-ngx on Railway
 
@@ -98,8 +98,8 @@ This template requires the following services:
 | `PAPERLESS_DBNAME` | `paperless` | Database name. Must match `POSTGRES_DB` on the Postgres service. |
 | `PAPERLESS_DBUSER` | (auto) | PostgreSQL username. Auto-detected from the Postgres companion service. |
 | `PAPERLESS_DBPASS` | (auto) | PostgreSQL password. Auto-detected from the Postgres companion service. |
-| `PAPERLESS_DBSSLMODE` | `prefer` | SSL mode for PostgreSQL connection |
-| `PAPERLESS_URL` | (auto) | Public URL. Auto-detected from the Railway domain. |
+|| `PAPERLESS_DB_OPTIONS` | `{"sslmode": "prefer"}` | PostgreSQL connection options (JSON) |\
+|| `PAPERLESS_URL` | (auto) | Public URL. Auto-detected from the Railway domain. |
 | `PAPERLESS_TIME_ZONE` | `UTC` | Timezone for document processing |
 | `PAPERLESS_OCR_LANGUAGE` | `eng` | Default OCR language |
 | `PAPERLESS_OCR_LANGUAGES` | `eng` | Additional OCR languages (space-separated) |
