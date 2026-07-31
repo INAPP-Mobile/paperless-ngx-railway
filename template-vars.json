@@ -45,7 +45,7 @@
     "isOptional": true
   },
   "PAPERLESS_URL": {
-    "defaultValue": "",
+    "defaultValue": "https://${{RAILWAY_PUBLIC_DOMAIN}}",
     "description": "Public URL for Paperless-ngx. Auto-detected from the Railway domain if left empty.",
     "isOptional": true
   },
