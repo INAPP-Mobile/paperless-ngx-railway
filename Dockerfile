@@ -2,10 +2,8 @@
 # Uses the official paperless-ngx image with environment-based configuration
 FROM paperlessngx/paperless-ngx:3.0.4
 
-# The base image already has:
-#   ENTRYPOINT ["/init"]   (s6-overlay init)
-#   HEALTHCHECK ...        (curl on localhost:8000)
-# We don't override either — just pass through environment variables.
+# The base image already has ENTRYPOINT ["/init"] and runs s6-overlay services
+# No need to override ENTRYPOINT or CMD
 
 # Paperless-ngx listens on port 8000
 EXPOSE 8000
