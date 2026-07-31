@@ -4,32 +4,32 @@
     "description": "Secret key for session tokens and signing. A random value is generated on first deploy if left empty."
   },
   "PAPERLESS_REDIS": {
-    "value": "redis://redis:6379",
-    "description": "Redis connection string for Celery broker. Auto-detected from the Redis companion service."
+    "value": "${{REDIS_URL}}",
+    "description": "Redis connection string for Celery broker. Auto-detected from the Redis companion service (REDIS_URL)."
   },
   "PAPERLESS_DBENGINE": {
     "value": "postgresql",
     "description": "Database engine to use. Set to 'postgresql' for the companion Postgres service."
   },
   "PAPERLESS_DBHOST": {
-    "value": "postgres",
+    "value": "${{PGHOST}}",
     "description": "PostgreSQL host. Auto-detected from the Postgres companion service (PGHOST)."
   },
   "PAPERLESS_DBPORT": {
-    "value": "5432",
-    "description": "PostgreSQL port. Auto-detected from PGPORT if available."
+    "value": "${{PGPORT}}",
+    "description": "PostgreSQL port. Auto-detected from PGPORT."
   },
   "PAPERLESS_DBNAME": {
-    "value": "paperless",
-    "description": "PostgreSQL database name. Must match POSTGRES_DB on the Postgres service."
+    "value": "${{PGDATABASE}}",
+    "description": "PostgreSQL database name. Auto-detected from the Postgres companion service."
   },
   "PAPERLESS_DBUSER": {
-    "value": "paperless",
-    "description": "PostgreSQL username. Must match POSTGRES_USER on the Postgres service."
+    "value": "${{PGUSER}}",
+    "description": "PostgreSQL username. Auto-detected from the Postgres companion service."
   },
   "PAPERLESS_DBPASS": {
-    "value": "paperless",
-    "description": "PostgreSQL password. Must match POSTGRES_PASSWORD on the Postgres service."
+    "value": "${{PGPASSWORD}}",
+    "description": "PostgreSQL password. Auto-detected from the Postgres companion service."
   },
   "PAPERLESS_DBSSLMODE": {
     "value": "prefer",

@@ -5,8 +5,8 @@
     "isOptional": true
   },
   "PAPERLESS_REDIS": {
-    "defaultValue": "redis://redis:6379",
-    "description": "Redis connection string for Celery broker. Auto-detected from the Redis companion service.",
+    "defaultValue": "${{REDIS_URL}}",
+    "description": "Redis connection string for Celery broker. Auto-detected from the Redis companion service (REDIS_URL).",
     "isOptional": true
   },
   "PAPERLESS_DBENGINE": {
@@ -15,28 +15,28 @@
     "isOptional": true
   },
   "PAPERLESS_DBHOST": {
-    "defaultValue": "postgres",
+    "defaultValue": "${{PGHOST}}",
     "description": "PostgreSQL host. Auto-detected from the Postgres companion service (PGHOST).",
     "isOptional": true
   },
   "PAPERLESS_DBPORT": {
-    "defaultValue": "5432",
-    "description": "PostgreSQL port. Auto-detected from PGPORT if available.",
+    "defaultValue": "${{PGPORT}}",
+    "description": "PostgreSQL port. Auto-detected from PGPORT.",
     "isOptional": true
   },
   "PAPERLESS_DBNAME": {
-    "defaultValue": "paperless",
-    "description": "PostgreSQL database name. Must match POSTGRES_DB on the Postgres service.",
+    "defaultValue": "${{PGDATABASE}}",
+    "description": "PostgreSQL database name. Auto-detected from the Postgres companion service.",
     "isOptional": true
   },
   "PAPERLESS_DBUSER": {
-    "defaultValue": "paperless",
-    "description": "PostgreSQL username. Must match POSTGRES_USER on the Postgres service.",
+    "defaultValue": "${{PGUSER}}",
+    "description": "PostgreSQL username. Auto-detected from the Postgres companion service.",
     "isOptional": true
   },
   "PAPERLESS_DBPASS": {
-    "defaultValue": "paperless",
-    "description": "PostgreSQL password. Must match POSTGRES_PASSWORD on the Postgres service.",
+    "defaultValue": "${{PGPASSWORD}}",
+    "description": "PostgreSQL password. Auto-detected from the Postgres companion service.",
     "isOptional": true
   },
   "PAPERLESS_DBSSLMODE": {
