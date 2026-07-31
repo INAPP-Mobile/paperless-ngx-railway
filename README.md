@@ -1,4 +1,4 @@
-[![Deploy to Railway](https://railway.app/button.svg)](https://railway.com/deploy/XthJwv)
+[![Deploy to Railway](https://railway.app/button.svg)](https://railway.com/deploy/YqO2VH)
 
 # Deploy and Host Paperless-ngx on Railway
 
