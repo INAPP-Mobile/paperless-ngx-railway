@@ -1,4 +1,4 @@
-[![Deploy to Railway](https://railway.app/button.svg)](https://railway.com/deploy/YqO2VH)
+[![Deploy to Railway](https://railway.app/button.svg)](https://railway.com/deploy/serene-light)
 
 # Deploy and Host Paperless-ngx on Railway
 
@@ -111,7 +111,7 @@ This template requires the following services:
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `POSTGRES_USER` | `paperless` | Database superuser |
-| `POSTGRES_PASSWORD` | `paperless` | Database password |
+| `POSTGRES_PASSWORD` | auto-generated | Database password (auto-generated secret) |
 | `POSTGRES_DB` | `paperless` | Initial database name |
 | `PGDATA` | `/var/lib/postgresql/data/pgdata` | Postgres data directory |
 
@@ -119,7 +119,8 @@ This template requires the following services:
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `REDIS_URL` | `redis://redis:6379` | Redis/Valkey connection URL |
+| `REDIS_PASSWORD` | auto-generated | Redis password (auto-generated secret) |
+| `REDIS_URL` | `redis://:${REDIS_PASSWORD}@${RAILWAY_PRIVATE_DOMAIN}:6379` | Redis/Valkey connection URL with password |
 
 ## Persistent Storage
 
