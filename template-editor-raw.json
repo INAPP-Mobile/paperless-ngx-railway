@@ -36,7 +36,7 @@
     "description": "PostgreSQL connection options (JSON). Sets SSL mode to prefer."
   },
   "PAPERLESS_URL": {
-    "value": "https://${{Railway.Public.Domain}}",
+    "value": "https://${{RAILWAY_PUBLIC_DOMAIN}}",
     "description": "Public URL for Paperless-ngx. Auto-configured via Railway public domain."
   },
   "PAPERLESS_OCR_LANGUAGE": {
