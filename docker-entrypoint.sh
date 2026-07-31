@@ -61,6 +61,12 @@ echo "=== Database migrations completed ==="
 
 # --- Start Paperless-ngx ---
 echo "=== Starting Paperless-ngx on port ${PORT:-8000} ==="
-# Call the original Paperless-ngx entrypoint to start s6 and all services
-# The original entrypoint handles s6-svscan startup, migrations, etc.
-exec /usr/local/bin/paperless-original-entrypoint.sh paperless
+# Paperless-ngx uses s6-overlay for process management
+# Find and start s6-svscan
+S6_BIN=$(which s6-svscan 2>/dev/null || find / -name s6-svscan -type f 2>/dev/null | head -1)
+if [ -n "$S6_BIN" ]; then
+    exec "$S6_BIN" /etc/s6
+else
+    echo "ERROR: s6-svscan not found"
+    exit 1
+fi
