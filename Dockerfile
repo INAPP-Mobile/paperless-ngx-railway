@@ -1,6 +1,6 @@
 # Paperless-ngx on Railway
 # Uses the official paperless-ngx image with environment-based configuration
-FROM ghcr.io/paperless-ngx/paperless-ngx:3.0.4
+FROM paperlessngx/paperless-ngx:3.0.4
 
 # The base image already has:
 #   ENTRYPOINT ["/init"]   (s6-overlay init)
