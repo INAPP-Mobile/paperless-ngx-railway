@@ -1,7 +1,7 @@
 {
   "PAPERLESS_SECRET_KEY": {
-    "defaultValue": "auto-generated",
-    "description": "Secret key for session tokens and signing. A random value is generated on first deploy if left empty.",
+    "defaultValue": "${{secret(64)}}",
+    "description": "Secret key for session tokens and signing. Auto-generated on first deploy.",
     "isOptional": true
   },
   "PAPERLESS_REDIS": {
@@ -11,31 +11,31 @@
   },
   "PAPERLESS_DBENGINE": {
     "defaultValue": "postgresql",
-    "description": "Database engine to use. Set to 'postgresql' for the companion Postgres service.",
+    "description": "Database engine to use.",
     "isOptional": true
   },
   "PAPERLESS_DBHOST": {
-    "defaultValue": "${{PGHOST}}",
-    "description": "PostgreSQL host. Auto-detected from the Postgres companion service (PGHOST).",
+    "defaultValue": "Postgres.PGHOST",
+    "description": "PostgreSQL host. Auto-detected from the Postgres companion service.",
     "isOptional": true
   },
   "PAPERLESS_DBPORT": {
-    "defaultValue": "${{PGPORT}}",
-    "description": "PostgreSQL port. Auto-detected from PGPORT.",
+    "defaultValue": "Postgres.PGPORT",
+    "description": "PostgreSQL port. Auto-detected from the Postgres companion service.",
     "isOptional": true
   },
   "PAPERLESS_DBNAME": {
-    "defaultValue": "${{PGDATABASE}}",
+    "defaultValue": "Postgres.PGDATABASE",
     "description": "PostgreSQL database name. Auto-detected from the Postgres companion service.",
     "isOptional": true
   },
   "PAPERLESS_DBUSER": {
-    "defaultValue": "${{PGUSER}}",
+    "defaultValue": "Postgres.PGUSER",
     "description": "PostgreSQL username. Auto-detected from the Postgres companion service.",
     "isOptional": true
   },
   "PAPERLESS_DBPASS": {
-    "defaultValue": "${{PGPASSWORD}}",
+    "defaultValue": "Postgres.PGPASSWORD",
     "description": "PostgreSQL password. Auto-detected from the Postgres companion service.",
     "isOptional": true
   },
@@ -46,7 +46,7 @@
   },
   "PAPERLESS_URL": {
     "defaultValue": "https://${{RAILWAY_PUBLIC_DOMAIN}}",
-    "description": "Public URL for Paperless-ngx. Auto-detected from the Railway domain if left empty.",
+    "description": "Public URL for Paperless-ngx. Auto-configured via Railway public domain.",
     "isOptional": true
   },
   "PAPERLESS_TIME_ZONE": {

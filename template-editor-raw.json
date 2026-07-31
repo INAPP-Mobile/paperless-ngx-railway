@@ -1,7 +1,7 @@
 {
   "PAPERLESS_SECRET_KEY": {
-    "value": "auto-generated",
-    "description": "Secret key for session tokens and signing. A random value is generated on first deploy if left empty."
+    "value": "${{secret(64)}}",
+    "description": "Secret key for session tokens and signing. Auto-generated on first deploy."
   },
   "PAPERLESS_REDIS": {
     "value": "${{REDIS_URL}}",
@@ -9,26 +9,26 @@
   },
   "PAPERLESS_DBENGINE": {
     "value": "postgresql",
-    "description": "Database engine to use. Set to 'postgresql' for the companion Postgres service."
+    "description": "Database engine to use."
   },
   "PAPERLESS_DBHOST": {
-    "value": "${{PGHOST}}",
-    "description": "PostgreSQL host. Auto-detected from the Postgres companion service (PGHOST)."
+    "value": "Postgres.PGHOST",
+    "description": "PostgreSQL host. Auto-detected from the Postgres companion service."
   },
   "PAPERLESS_DBPORT": {
-    "value": "${{PGPORT}}",
-    "description": "PostgreSQL port. Auto-detected from PGPORT."
+    "value": "Postgres.PGPORT",
+    "description": "PostgreSQL port. Auto-detected from the Postgres companion service."
   },
   "PAPERLESS_DBNAME": {
-    "value": "${{PGDATABASE}}",
+    "value": "Postgres.PGDATABASE",
     "description": "PostgreSQL database name. Auto-detected from the Postgres companion service."
   },
   "PAPERLESS_DBUSER": {
-    "value": "${{PGUSER}}",
+    "value": "Postgres.PGUSER",
     "description": "PostgreSQL username. Auto-detected from the Postgres companion service."
   },
   "PAPERLESS_DBPASS": {
-    "value": "${{PGPASSWORD}}",
+    "value": "Postgres.PGPASSWORD",
     "description": "PostgreSQL password. Auto-detected from the Postgres companion service."
   },
   "PAPERLESS_DBSSLMODE": {
@@ -37,7 +37,7 @@
   },
   "PAPERLESS_URL": {
     "value": "https://${{RAILWAY_PUBLIC_DOMAIN}}",
-    "description": "Public URL for Paperless-ngx. Auto-detected from the Railway domain if left empty."
+    "description": "Public URL for Paperless-ngx. Auto-configured via Railway public domain."
   },
   "PAPERLESS_TIME_ZONE": {
     "value": "UTC",
