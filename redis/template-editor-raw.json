@@ -1,6 +1,10 @@
 {
+  "REDIS_PASSWORD": {
+    "value": "${{secret(16)}}",
+    "description": "Redis password. Auto-generated. Used in REDIS_URL for auth."
+  },
   "REDIS_URL": {
-    "value": "redis://redis:6379",
-    "description": "Redis/Valkey connection URL. Auto-shared with the Paperless service as PAPERLESS_REDIS."
+    "value": "redis://:${{REDIS_PASSWORD}}@${{RAILWAY_PRIVATE_DOMAIN}}:6379",
+    "description": "Redis/Valkey connection URL with password. Auto-shared with the Paperless service as PAPERLESS_REDIS."
   }
 }

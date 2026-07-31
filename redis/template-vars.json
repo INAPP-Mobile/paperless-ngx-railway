@@ -1,7 +1,12 @@
 {
+  "REDIS_PASSWORD": {
+    "defaultValue": "${{secret(16)}}",
+    "description": "Redis password. Auto-generated. Used in REDIS_URL for auth.",
+    "isOptional": false
+  },
   "REDIS_URL": {
-    "defaultValue": "redis://redis:6379",
-    "description": "Redis/Valkey connection URL for Celery broker and cache. Auto-shared with the Paperless service as PAPERLESS_REDIS.",
+    "defaultValue": "redis://:${{REDIS_PASSWORD}}@${{RAILWAY_PRIVATE_DOMAIN}}:6379",
+    "description": "Redis/Valkey connection URL with password. Auto-shared with the Paperless service as PAPERLESS_REDIS.",
     "isOptional": true
   }
 }
