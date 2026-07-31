@@ -4,8 +4,8 @@
     "description": "Secret key for session tokens and signing. Auto-generated on first deploy."
   },
   "PAPERLESS_REDIS": {
-    "value": "${{REDIS_URL}}",
-    "description": "Redis connection string for Celery broker. Auto-detected from the Redis companion service (REDIS_URL)."
+    "value": "${{Redis.REDIS_URL}}",
+    "description": "Redis connection string for Celery broker. Auto-detected from the Redis companion service."
   },
   "PAPERLESS_DBENGINE": {
     "value": "postgresql",
