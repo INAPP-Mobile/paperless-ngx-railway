@@ -10,6 +10,7 @@
     "PGDATABASE": "PGDATABASE"
   },
   "redis": {
+    "REDIS_PASSWORD": "REDIS_PASSWORD",
     "REDIS_URL": "REDIS_URL"
   }
 }

@@ -5,7 +5,7 @@
     "isOptional": true
   },
   "PAPERLESS_REDIS": {
-    "defaultValue": "${{Redis.REDIS_URL}}",
+    "defaultValue": "${{REDIS_URL}}",
     "description": "Redis connection string for Celery broker. Auto-detected from the Redis companion service (REDIS_URL).",
     "isOptional": true
   },

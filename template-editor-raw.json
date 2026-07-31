@@ -39,10 +39,6 @@
     "value": "https://${{Railway.Public.Domain}}",
     "description": "Public URL for Paperless-ngx. Auto-configured via Railway public domain."
   },
-  "PAPERLESS_REDIS": {
-    "value": "${{Redis.REDIS_URL}}",
-    "description": "Redis connection string for Celery broker. Auto-detected from the Redis companion service (REDIS_URL)."
-  },
   "PAPERLESS_OCR_LANGUAGE": {
     "value": "eng",
     "description": "Default language for OCR. Set to the language most of your documents are written in."
@@ -58,6 +54,10 @@
   "PAPERLESS_CONSUMER_POLLING_INTERVAL": {
     "value": "0",
     "description": "Polling interval (seconds) for the consumer. 0 = event-driven (recommended)."
+  },
+  "PAPERLESS_TIME_ZONE": {
+    "value": "UTC",
+    "description": "Timezone for Paperless-ngx operations."
   },
   "PORT": {
     "value": "8000",
