@@ -6,9 +6,19 @@
   },
   "deploy": {
     "startCommand": "",
-    "healthcheckPath": "/health",
+    "healthcheckPath": "/api/status/",
     "healthcheckTimeout": 300,
     "restartPolicyType": "ON_FAILURE",
-    "restartPolicyMaxRetries": 5
+    "restartPolicyMaxRetries": 5,
+    "volumeMounts": [
+      {
+        "name": "paperless-data",
+        "mountPath": "/usr/src/paperless/data"
+      },
+      {
+        "name": "paperless-media",
+        "mountPath": "/usr/src/paperless/media"
+      }
+    ]
   }
 }
