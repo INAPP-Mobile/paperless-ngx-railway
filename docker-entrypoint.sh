@@ -19,6 +19,9 @@ if [ -z "$PAPERLESS_REDIS" ]; then
     else
         echo "WARNING: PAPERLESS_REDIS not set and no Redis companion detected."
         echo "Paperless-ngx will use in-memory broker (background tasks disabled)."
+        # Force Django to use local memory cache instead of Redis
+        export PAPERLESS_REDIS=""
+        export DJANGO_REDIS_URL=""
     fi
 fi
 
