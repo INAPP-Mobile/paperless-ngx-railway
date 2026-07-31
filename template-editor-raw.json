@@ -12,24 +12,24 @@
     "description": "Database engine to use."
   },
   "PAPERLESS_DBHOST": {
-    "value": "Postgres.PGHOST",
-    "description": "PostgreSQL host. Auto-detected from the Postgres companion service."
+    "value": "${{PGHOST}}",
+    "description": "PostgreSQL host. Auto-detected from the Postgres companion service (PGHOST)."
   },
   "PAPERLESS_DBPORT": {
-    "value": "Postgres.PGPORT",
-    "description": "PostgreSQL port. Auto-detected from the Postgres companion service."
+    "value": "${{PGPORT}}",
+    "description": "PostgreSQL port. Auto-detected from the Postgres companion service (PGPORT)."
   },
   "PAPERLESS_DBNAME": {
-    "value": "Postgres.PGDATABASE",
-    "description": "PostgreSQL database name. Auto-detected from the Postgres companion service."
+    "value": "${{PGDATABASE}}",
+    "description": "PostgreSQL database name. Auto-detected from the Postgres companion service (PGDATABASE)."
   },
   "PAPERLESS_DBUSER": {
-    "value": "Postgres.PGUSER",
-    "description": "PostgreSQL username. Auto-detected from the Postgres companion service."
+    "value": "${{PGUSER}}",
+    "description": "PostgreSQL username. Auto-detected from the Postgres companion service (PGUSER)."
   },
   "PAPERLESS_DBPASS": {
-    "value": "Postgres.PGPASSWORD",
-    "description": "PostgreSQL password. Auto-detected from the Postgres companion service."
+    "value": "${{PGPASSWORD}}",
+    "description": "PostgreSQL password. Auto-detected from the Postgres companion service (PGPASSWORD)."
   },
   "PAPERLESS_DBSSLMODE": {
     "value": "prefer",

@@ -15,28 +15,28 @@
     "isOptional": true
   },
   "PAPERLESS_DBHOST": {
-    "defaultValue": "Postgres.PGHOST",
-    "description": "PostgreSQL host. Auto-detected from the Postgres companion service.",
+    "defaultValue": "${{PGHOST}}",
+    "description": "PostgreSQL host. Auto-detected from the Postgres companion service (PGHOST).",
     "isOptional": true
   },
   "PAPERLESS_DBPORT": {
-    "defaultValue": "Postgres.PGPORT",
-    "description": "PostgreSQL port. Auto-detected from the Postgres companion service.",
+    "defaultValue": "${{PGPORT}}",
+    "description": "PostgreSQL port. Auto-detected from the Postgres companion service (PGPORT).",
     "isOptional": true
   },
   "PAPERLESS_DBNAME": {
-    "defaultValue": "Postgres.PGDATABASE",
-    "description": "PostgreSQL database name. Auto-detected from the Postgres companion service.",
+    "defaultValue": "${{PGDATABASE}}",
+    "description": "PostgreSQL database name. Auto-detected from the Postgres companion service (PGDATABASE).",
     "isOptional": true
   },
   "PAPERLESS_DBUSER": {
-    "defaultValue": "Postgres.PGUSER",
-    "description": "PostgreSQL username. Auto-detected from the Postgres companion service.",
+    "defaultValue": "${{PGUSER}}",
+    "description": "PostgreSQL username. Auto-detected from the Postgres companion service (PGUSER).",
     "isOptional": true
   },
   "PAPERLESS_DBPASS": {
-    "defaultValue": "Postgres.PGPASSWORD",
-    "description": "PostgreSQL password. Auto-detected from the Postgres companion service.",
+    "defaultValue": "${{PGPASSWORD}}",
+    "description": "PostgreSQL password. Auto-detected from the Postgres companion service (PGPASSWORD).",
     "isOptional": true
   },
   "PAPERLESS_DBSSLMODE": {

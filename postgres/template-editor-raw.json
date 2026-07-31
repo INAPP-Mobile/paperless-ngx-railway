@@ -1,11 +1,11 @@
 {
   "POSTGRES_USER": {
     "value": "paperless",
-    "description": "Postgres superuser name. Paperless-ngx connects with these credentials."
+    "description": "Postgres superuser name. Also used by Paperless-ngx to connect (PGUSER)."
   },
   "POSTGRES_PASSWORD": {
     "value": "paperless",
-    "description": "Postgres password. Default literal 'paperless' so a fresh template deploy authenticates out of the box. Rotate this in the dashboard before production."
+    "description": "Postgres password. Also used by Paperless-ngx to connect (PGPASSWORD). Default literal 'paperless' so a fresh template deploy authenticates out of the box. Rotate this in the dashboard before production."
   },
   "POSTGRES_DB": {
     "value": "paperless",
@@ -14,5 +14,21 @@
   "PGDATA": {
     "value": "/var/lib/postgresql/data/pgdata",
     "description": "Postgres data directory. Must be a subdirectory of the volume mount path (/var/lib/postgresql) so lost+found stays outside PGDATA."
+  },
+  "PGHOST": {
+    "value": "postgres.railway.internal",
+    "description": "Postgres internal hostname. Shared with the Paperless-ngx service via companion-mapping."
+  },
+  "PGPORT": {
+    "value": "5432",
+    "description": "Postgres port. Shared with the Paperless-ngx service via companion-mapping."
+  },
+  "PGUSER": {
+    "value": "paperless",
+    "description": "Postgres username for Paperless-ngx. Shared with the Paperless-ngx service via companion-mapping."
+  },
+  "PGPASSWORD": {
+    "value": "paperless",
+    "description": "Postgres password for Paperless-ngx. Shared with the Paperless-ngx service via companion-mapping. Must match POSTGRES_PASSWORD."
   }
 }
