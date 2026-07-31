@@ -1,0 +1,22 @@
+{
+  "POSTGRES_USER": {
+    "defaultValue": "paperless",
+    "description": "Postgres superuser name. Paperless-ngx connects with these credentials.",
+    "isOptional": false
+  },
+  "POSTGRES_PASSWORD": {
+    "defaultValue": "paperless",
+    "description": "Postgres password. Default literal 'paperless' so a fresh template deploy authenticates out of the box. Rotate this in the dashboard before production.",
+    "isOptional": false
+  },
+  "POSTGRES_DB": {
+    "defaultValue": "paperless",
+    "description": "Initial database created on first boot. Must match PAPERLESS_DBNAME on the Paperless service.",
+    "isOptional": false
+  },
+  "PGDATA": {
+    "defaultValue": "/var/lib/postgresql/data/pgdata",
+    "description": "Postgres data directory. Must be a subdirectory of the volume mount path so lost+found stays outside PGDATA.",
+    "isOptional": true
+  }
+}

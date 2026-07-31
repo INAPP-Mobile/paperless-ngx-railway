@@ -1,0 +1,66 @@
+{
+  "PAPERLESS_SECRET_KEY": {
+    "value": "auto-generated",
+    "description": "Secret key for session tokens and signing. A random value is generated on first deploy if left empty."
+  },
+  "PAPERLESS_REDIS": {
+    "value": "redis://redis:6379",
+    "description": "Redis connection string for Celery broker. Auto-detected from the Redis companion service."
+  },
+  "PAPERLESS_DBENGINE": {
+    "value": "postgresql",
+    "description": "Database engine to use. Set to 'postgresql' for the companion Postgres service."
+  },
+  "PAPERLESS_DBHOST": {
+    "value": "postgres",
+    "description": "PostgreSQL host. Auto-detected from the Postgres companion service (PGHOST)."
+  },
+  "PAPERLESS_DBPORT": {
+    "value": "5432",
+    "description": "PostgreSQL port. Auto-detected from PGPORT if available."
+  },
+  "PAPERLESS_DBNAME": {
+    "value": "paperless",
+    "description": "PostgreSQL database name. Must match POSTGRES_DB on the Postgres service."
+  },
+  "PAPERLESS_DBUSER": {
+    "value": "paperless",
+    "description": "PostgreSQL username. Must match POSTGRES_USER on the Postgres service."
+  },
+  "PAPERLESS_DBPASS": {
+    "value": "paperless",
+    "description": "PostgreSQL password. Must match POSTGRES_PASSWORD on the Postgres service."
+  },
+  "PAPERLESS_DBSSLMODE": {
+    "value": "prefer",
+    "description": "SSL mode for PostgreSQL connection."
+  },
+  "PAPERLESS_URL": {
+    "value": "",
+    "description": "Public URL for Paperless-ngx. Auto-detected from the Railway domain if left empty."
+  },
+  "PAPERLESS_TIME_ZONE": {
+    "value": "UTC",
+    "description": "Timezone for Paperless-ngx operations."
+  },
+  "PAPERLESS_OCR_LANGUAGE": {
+    "value": "eng",
+    "description": "Default language for OCR. Set to the language most of your documents are written in."
+  },
+  "PAPERLESS_OCR_LANGUAGES": {
+    "value": "eng",
+    "description": "Additional OCR languages to install, space-separated."
+  },
+  "PAPERLESS_CONSUMER_RECURSIVE": {
+    "value": "true",
+    "description": "Whether the document consumer recursively scans subdirectories."
+  },
+  "PAPERLESS_CONSUMER_POLLING_INTERVAL": {
+    "value": "0",
+    "description": "Polling interval (seconds) for the consumer. 0 = event-driven (recommended)."
+  },
+  "PORT": {
+    "value": "8000",
+    "description": "Port for the Paperless-ngx web server."
+  }
+}

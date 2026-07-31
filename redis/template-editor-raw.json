@@ -1,0 +1,6 @@
+{
+  "REDIS_URL": {
+    "value": "redis://redis:6379",
+    "description": "Redis/Valkey connection URL. Auto-shared with the Paperless service as PAPERLESS_REDIS."
+  }
+}

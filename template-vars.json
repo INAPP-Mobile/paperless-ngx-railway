@@ -1,0 +1,82 @@
+{
+  "PAPERLESS_SECRET_KEY": {
+    "defaultValue": "auto-generated",
+    "description": "Secret key for session tokens and signing. A random value is generated on first deploy if left empty.",
+    "isOptional": true
+  },
+  "PAPERLESS_REDIS": {
+    "defaultValue": "redis://redis:6379",
+    "description": "Redis connection string for Celery broker. Auto-detected from the Redis companion service.",
+    "isOptional": true
+  },
+  "PAPERLESS_DBENGINE": {
+    "defaultValue": "postgresql",
+    "description": "Database engine to use. Set to 'postgresql' for the companion Postgres service.",
+    "isOptional": true
+  },
+  "PAPERLESS_DBHOST": {
+    "defaultValue": "postgres",
+    "description": "PostgreSQL host. Auto-detected from the Postgres companion service (PGHOST).",
+    "isOptional": true
+  },
+  "PAPERLESS_DBPORT": {
+    "defaultValue": "5432",
+    "description": "PostgreSQL port. Auto-detected from PGPORT if available.",
+    "isOptional": true
+  },
+  "PAPERLESS_DBNAME": {
+    "defaultValue": "paperless",
+    "description": "PostgreSQL database name. Must match POSTGRES_DB on the Postgres service.",
+    "isOptional": true
+  },
+  "PAPERLESS_DBUSER": {
+    "defaultValue": "paperless",
+    "description": "PostgreSQL username. Must match POSTGRES_USER on the Postgres service.",
+    "isOptional": true
+  },
+  "PAPERLESS_DBPASS": {
+    "defaultValue": "paperless",
+    "description": "PostgreSQL password. Must match POSTGRES_PASSWORD on the Postgres service.",
+    "isOptional": true
+  },
+  "PAPERLESS_DBSSLMODE": {
+    "defaultValue": "prefer",
+    "description": "SSL mode for PostgreSQL connection.",
+    "isOptional": true
+  },
+  "PAPERLESS_URL": {
+    "defaultValue": "",
+    "description": "Public URL for Paperless-ngx. Auto-detected from the Railway domain if left empty.",
+    "isOptional": true
+  },
+  "PAPERLESS_TIME_ZONE": {
+    "defaultValue": "UTC",
+    "description": "Timezone for Paperless-ngx operations.",
+    "isOptional": true
+  },
+  "PAPERLESS_OCR_LANGUAGE": {
+    "defaultValue": "eng",
+    "description": "Default language for OCR. Set to the language most of your documents are written in.",
+    "isOptional": true
+  },
+  "PAPERLESS_OCR_LANGUAGES": {
+    "defaultValue": "eng",
+    "description": "Additional OCR languages to install, space-separated.",
+    "isOptional": true
+  },
+  "PAPERLESS_CONSUMER_RECURSIVE": {
+    "defaultValue": "true",
+    "description": "Whether the document consumer recursively scans subdirectories.",
+    "isOptional": true
+  },
+  "PAPERLESS_CONSUMER_POLLING_INTERVAL": {
+    "defaultValue": "0",
+    "description": "Polling interval (seconds) for the consumer. 0 = event-driven (recommended).",
+    "isOptional": true
+  },
+  "PORT": {
+    "defaultValue": "8000",
+    "description": "Port for the Paperless-ngx web server.",
+    "isOptional": true
+  }
+}

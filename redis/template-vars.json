@@ -1,0 +1,7 @@
+{
+  "REDIS_URL": {
+    "defaultValue": "redis://redis:6379",
+    "description": "Redis/Valkey connection URL for Celery broker and cache. Auto-shared with the Paperless service as PAPERLESS_REDIS.",
+    "isOptional": true
+  }
+}
